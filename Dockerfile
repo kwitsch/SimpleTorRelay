@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add tor tzdata --no-cache
+RUN apk add tor python2 tzdata --no-cache
 
 COPY src/torrc /etc/tor/torrc
 COPY src/entrypoint.sh entrypoint.sh
