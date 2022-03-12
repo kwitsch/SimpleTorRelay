@@ -17,7 +17,7 @@ VOLUME ["/var/lib/tor"]
 ENV TOR_NICKNAME=SimpleRelay
 ENV TOR_CONTACTINFO=simple@relay.tor
 
-EXPOSE 9001
+EXPOSE 9001 9030
 
 USER tor
 
