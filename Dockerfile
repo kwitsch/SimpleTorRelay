@@ -6,11 +6,10 @@ RUN apk update && \
         tzdata
 
 COPY src/entrypoint.sh entrypoint.sh
+COPY src/torrc /etc/tor/torrc
 
 RUN chmod +x entrypoint.sh && \
     chown -R tor /etc/tor 
-
-COPY src/torrc /etc/tor/torrc
 
 VOLUME ["/var/lib/tor"]
 
