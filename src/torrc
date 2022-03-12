@@ -3,3 +3,5 @@ ORPort 9001
 ExitRelay 0
 ExitPolicy reject *:*
 BridgeRelay 1
+AddressDisableIPv6 1
+HeartbeatPeriod 1 hours
