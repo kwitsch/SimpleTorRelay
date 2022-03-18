@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-printf "\nNickname ${TOR_NICKNAME}" >> /etc/tor/torrc
-printf "\nContactInfo ${TOR_CONTACTINFO}" >> /etc/tor/torrc
+printf "\nNickname ${TOR_NICKNAME}" >> /torrc
+printf "\nContactInfo ${TOR_CONTACTINFO}" >> /torrc
 
 exec tor -f /torrc

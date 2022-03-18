@@ -39,9 +39,6 @@ FROM alpine AS compose
 
 COPY --from=build /usr/local/bin /usr/local/bin
 
-COPY src/entrypoint.sh entrypoint.sh
-COPY src/torrc /torrc
-
 RUN apk update && \
     apk add --no-cache \
     musl \
@@ -49,11 +46,15 @@ RUN apk update && \
     libevent \
     tzdata
     
-RUN    adduser -S -D -H -s /sbin/nologin tor
-RUN    chmod +x entrypoint.sh
-RUN    chown tor /torrc
-RUN    mkdir /tordata
-RUN    chown -R tor /tordata
+RUN adduser -S -D -H -s /sbin/nologin tor
+COPY src/entrypoint.sh entrypoint.sh
+COPY src/torrc /torrc
+RUN chmod +x entrypoint.sh
+RUN chown tor /torrc
+RUN chmod +w /torrc
+
+RUN mkdir /tordata
+RUN chown -R tor /tordata
 
 FROM scratch 
 
@@ -68,4 +69,5 @@ EXPOSE 9001 9030
 
 USER tor
 
-ENTRYPOINT [ "/bin/sh", "entrypoint.sh" ]
+ENTRYPOINT [ "/bin/sh" ]
+CMD [ "entrypoint.sh" ]
