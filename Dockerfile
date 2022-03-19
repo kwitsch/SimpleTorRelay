@@ -62,9 +62,6 @@ COPY --from=compose / /
 
 VOLUME ["/tordata"]
 
-ENV TOR_NICKNAME=SimpleRelay
-ENV TOR_CONTACTINFO=simple@relay.tor
-
 EXPOSE 9001 9030
 
 USER tor
