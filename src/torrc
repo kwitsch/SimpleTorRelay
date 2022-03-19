@@ -1,4 +1,5 @@
-SOCKSPort 0
+SOCKSPort 127.0.0.1:9050
+SOCKSPolicy accept 127.0.0.1/32
 SOCKSPolicy reject *
 ExitRelay 0
 ExitPolicy reject *:*
@@ -6,3 +7,5 @@ ORPort 9001 IPv4Only
 DirPort 9030 IPv4Only
 AvoidDiskWrites 1
 HeartbeatPeriod 1 hours
+DataDirectory /tordata
+GeoIPFile /geoip
