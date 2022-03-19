@@ -10,6 +10,7 @@ RUN mkdir /tordata
 FROM alpine
 
 COPY --from=compose /usr/local/bin /usr/local/bin
+COPY --from=compose /usr/local/share/tor/geoip /geoip
 COPY --from=compose /entrypoint.sh /entrypoint.sh
 COPY --from=compose /torrc /torrc
 COPY --from=compose /tordata /tordata
@@ -22,6 +23,7 @@ RUN apk update && \
     tzdata \
     curl && \
     adduser -S -D -H -s /sbin/nologin tor && \
+    chown tor /geoip && \
     chown tor /torrc && \
     chown -R tor /tordata
 
