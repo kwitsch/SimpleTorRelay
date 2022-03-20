@@ -1,6 +1,5 @@
 SOCKSPort 127.0.0.1:9050
-SOCKSPolicy accept 127.0.0.1/32
-SOCKSPolicy reject *
+SOCKSPolicy accept 127.0.0.1/32,reject *
 ExitRelay 0
 ExitPolicy reject *:*
 ORPort 9001
