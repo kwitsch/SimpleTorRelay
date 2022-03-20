@@ -17,11 +17,7 @@ if [ ! -z "$TOR_RELAYBANDWIDTHBURST" ]; then
 fi
 
 if [ ! -z "$TOR_ADDRESS" ]; then
-    printf "\nORPort ${TOR_ADDRESS}:9001 IPv4Only" >> /torrc
-    printf "\nDirPort ${TOR_ADDRESS}:9030 IPv4Only" >> /torrc
-else
-    printf "\nORPort 9001 IPv4Only" >> /torrc
-    printf "\nDirPort 9030 IPv4Only" >> /torrc
+    printf "\nAddress ${TOR_ADDRESS}" >> /torrc
 fi
 
 printf "\n" >> /torrc
