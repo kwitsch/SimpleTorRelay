@@ -6,5 +6,5 @@ ORPort 9001 IPv4Only
 DirPort 9030 IPv4Only
 AvoidDiskWrites 1
 HeartbeatPeriod 1 hours
-DataDirectory /tordata
-GeoIPFile /geoip
+DataDirectory /app/data
+GeoIPFile /app/geoip
