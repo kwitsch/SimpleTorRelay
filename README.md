@@ -9,6 +9,11 @@ Exposed ports wich should be forwarded in the firewall.
 * 9001 : ORPort
 * 9030 : DirPort
 
+## Data
+
+All data is stored in `/app/data`.
+This path is a volume which should be persisted to maintain the relay identity.
+
 ## Environment
 
 All environment variables are optional and set the according options.  
