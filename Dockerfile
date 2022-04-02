@@ -1,4 +1,4 @@
-FROM ghcr.io/kwitsch/alpinetor:latest AS compose
+FROM ghcr.io/kwitsch/alpinetor AS compose
 
 WORKDIR /app
 
@@ -26,7 +26,7 @@ RUN apk update && \
 
 VOLUME ["/app/data"]
 
-EXPOSE 9001 9030
+EXPOSE 9001
 
 USER tor
 
